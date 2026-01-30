@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luka Tchalidze | Portfolio</title>
+    <title>Luka Tchalidze | Android Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -16,7 +16,7 @@
             --text: #f1f5f9;
         }
 
-        * { margin: 0; padding: 0; box-box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -25,18 +25,15 @@
                               radial-gradient(circle at 100% 100%, rgba(0, 210, 255, 0.1) 0%, transparent 50%);
             color: var(--text);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
 
-        /* Animations */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Header Area */
         header {
             text-align: center;
             padding: 80px 0 40px;
@@ -53,7 +50,6 @@
 
         header p { font-size: 1.2rem; color: #94a3b8; letter-spacing: 2px; text-transform: uppercase; }
 
-        /* Glass Cards */
         .glass-card {
             background: var(--card-bg);
             backdrop-filter: blur(12px);
@@ -67,7 +63,6 @@
 
         h2 { font-size: 1.8rem; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; color: var(--primary); }
 
-        /* Skills Grid */
         .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
 
         .skill-item {
@@ -81,11 +76,11 @@
 
         .skill-item:hover { background: var(--primary); color: #000; transform: scale(1.05); }
 
-        /* Projects Layout */
         .projects-wrapper {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            animation: fadeInUp 1.2s ease-out;
         }
 
         .project-box {
@@ -96,19 +91,20 @@
             text-decoration: none;
             color: inherit;
             transition: 0.4s;
+            display: block;
         }
 
         .project-box:hover {
             background: rgba(255, 255, 255, 0.07);
             border-color: var(--primary);
             transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
         }
 
         .project-box i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
-        .project-box h3 { margin-bottom: 10px; font-size: 1.4rem; }
+        .project-box h3 { margin-bottom: 10px; font-size: 1.4rem; color: var(--primary); }
 
-        /* Contact Buttons */
-        .contact-flex { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
+        .contact-flex { display: flex; gap: 15px; justify-content: center; margin-top: 30px; animation: fadeInUp 1.4s ease-out; }
 
         .btn {
             padding: 12px 30px;
@@ -127,13 +123,18 @@
             box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
         }
 
-        .btn-primary:hover { box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5); transform: translateY(-3px); }
+        .btn-primary:hover { 
+            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5); 
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
 
         footer { text-align: center; color: #64748b; padding: 40px; font-size: 0.8rem; }
 
         @media (max-width: 600px) {
             header h1 { font-size: 2.5rem; }
             .glass-card { padding: 25px; }
+            .contact-flex { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -142,48 +143,58 @@
 <div class="container">
     <header>
         <h1>Luka Tchalidze</h1>
-        <p>Android Developer</p>
+        <p>Android Developer | Kotlin Specialist</p>
     </header>
 
     <section class="glass-card">
         <h2><i class="fas fa-rocket"></i> About Me</h2>
-        <p>I specialize in building high-performance Android applications using Kotlin. My focus is on creating seamless user experiences with clean architecture and robust local data management.</p>
+        <p>I build high-performance, offline-first Android applications with a focus on clean architecture (MVVM) and smooth user experiences. Currently exploring the intersection of Mobile Development and AI tools.</p>
     </section>
 
     <section class="glass-card">
         <h2><i class="fas fa-layer-group"></i> Tech Stack</h2>
         <div class="skills-grid">
             <div class="skill-item">Kotlin</div>
-            <div class="skill-item">Jetpack Compose</div>
-            <div class="skill-item">Room DB</div>
-            <div class="skill-item">Firebase</div>
+            <div class="skill-item">Android SDK</div>
+            <div class="skill-item">Room Database</div>
+            <div class="skill-item">Firebase Auth</div>
             <div class="skill-item">Retrofit</div>
-            <div class="skill-item">MVVM</div>
             <div class="skill-item">WorkManager</div>
-            <div class="skill-item">Git</div>
+            <div class="skill-item">Jetpack Compose</div>
+            <div class="skill-item">Git / GitHub</div>
         </div>
     </section>
 
     <div class="projects-wrapper">
-        <a href="https://github.com/Lukatc/Recipe-Manager" class="project-box">
+        <a href="https://github.com/Lukatc/Recipe-Manager" target="_blank" rel="noopener noreferrer" class="project-box">
             <i class="fas fa-utensils"></i>
             <h3>Recipe Manager</h3>
-            <p>An offline-first app for meal planning. Built with Room and WorkManager for local efficiency.</p>
+            <p>A secure, local-first recipe management app. Uses Room for storage and WorkManager for daily meal plan notifications.</p>
         </a>
-        <a href="https://github.com/Lukatc/Movie-App" class="project-box">
+        
+        <a href="https://github.com/Lukatc/Movie-App" target="_blank" rel="noopener noreferrer" class="project-box">
             <i class="fas fa-film"></i>
             <h3>Movie App</h3>
-            <p>Real-time movie browser using OMDb API. Implemented with Retrofit and Glide.</p>
+            <p>Dynamic movie browser fetching real-time data from OMDb API. Optimized with Glide for image caching.</p>
         </a>
     </div>
 
     <div class="contact-flex">
-        <a href="https://www.linkedin.com/in/lukatchalidze/" class="btn btn-primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/Lukatc" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/lukatchalidze/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        
+        <a href="https://github.com/Lukatc" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fab fa-github"></i> GitHub Profile
+        </a>
+        
+        <a href="mailto:Lukatc@example.com" class="btn btn-primary">
+            <i class="fas fa-envelope"></i> Email Me
+        </a>
     </div>
 
     <footer>
-        <p>© 2026 Luka Tchalidze | Built with Android Development in mind.</p>
+        <p>© 2024 Luka Tchalidze | Created for IT Portfolio Assignment</p>
     </footer>
 </div>
 
