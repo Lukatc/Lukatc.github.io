@@ -12,4 +12,4 @@ You can visit the live site here: [https://lukatc.github.io](https://lukatc.gith
 * **Google Fonts** - Typography
 
 ### 📁 About This Project
-The goal of this project is to showcase my Android development skills, technical projects, and provide a quick way for recruiters to contact me.
+The goal of this project is to showcase my Graphic Design skills, technical projects, and provide a quick way for recruiters to contact me.
